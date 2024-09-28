@@ -197,7 +197,7 @@ function Dashboard() {
 
   useEffect(() => {
     if (!action) {
-      const interval = setInterval(() => fetchNewToken(), 5000);
+      const interval = setInterval(() => fetchNewToken(), 3000);
       return () => clearInterval(interval);
     }
   }, [action]);
@@ -291,9 +291,6 @@ function Dashboard() {
       setCurrentStatus(Status.GET_NEWTOKEN);
     }
   }, [autoMode, newTokenList, currentStatus]);
-
-  // console.error("Elapsed Time: " + elapsedTime);
-  // makeElaspedTime();
 
   const liquidityLockPercent = tokenInfo.liquidity.lpLockedPct;
   return (
